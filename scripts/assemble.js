@@ -1,5 +1,5 @@
 // Join treated shots on exact frames and lay the song under them.
-// usage: node assemble.mjs <cut.json> <out.mp4>
+// usage: node assemble.js <cut.json> <out.mp4>
 // cut.json: { "song": "...mp3", "fps": 24, "end": 146.2, "fadeIn": 0.6, "fadeOut": 1.2,
 //             "shots": [ { "file": "fx-s1.mp4", "at": 85 }, { "file": "h3-s2.mp4", "at": 93 }, ... ] }
 // "at" = where the shot starts in the SONG; each shot runs until the next one's "at" (the last until "end").

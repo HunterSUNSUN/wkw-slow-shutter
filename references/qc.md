@@ -8,7 +8,7 @@
 | 黑帧、卡帧 | `$FF -i 成片.mp4 -vf "blackdetect=d=0.1,freezedetect=d=1" -f null -` | 没有。注意抽帧镜头本来就每帧停 3 格，freezedetect 时长设 1 秒以上 |
 | 爆音 | `$FF -i 成片.mp4 -af astats -f null - 2>&1 \| grep "Peak level"` | 峰值低于 −1 dB（实测 −2.0 dB） |
 | 开头是否突兀 | `$FF -t 0.05 -i 成片.mp4 -af astats -f null - 2>&1 \| grep "RMS level"` | 低于 −40 dB（不加淡入时 −22 dB，听着突兀；加 0.6 秒淡入后 −44 dB） |
-| 口型 | `node lipsync-check.mjs 演唱原片.mp4 歌.mp3 起点秒数 秒数` | 吻合度 0.85 以上，偏差在 40 毫秒（一帧）以内（实测 1.00 / 0.98 / 0.87，偏差 0 / 0 / 10 毫秒）。只适用于视频模型把驱动音频原样放回片子里的情况 |
+| 口型 | `node lipsync-check.js 演唱原片.mp4 歌.mp3 起点秒数 秒数` | 吻合度 0.85 以上，偏差在 40 毫秒（一帧）以内（实测 1.00 / 0.98 / 0.87，偏差 0 / 0 / 10 毫秒）。只适用于视频模型把驱动音频原样放回片子里的情况 |
 | 逐镜看画面 | `$FF -i 成片.mp4 -vf "fps=1,scale=480:-2,tile=6x11" -frames:v 1 总览.png` | 每秒一帧拼成大图，再放大看护脸椭圆的边缘、主角有没有被拖糊 |
 
 ## 常见问题（《Slow Shutter》里出现过）

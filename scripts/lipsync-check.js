@@ -1,6 +1,6 @@
 // Does a singing clip's mouth line up with the song? H3 lock_source returns the driving
 // audio inside the clip, so compare the clip's own sound with the song at the same moment.
-// usage: node lipsync-check.mjs <clip.mp4> <song.mp3> <songStartSec> [seconds=6]
+// usage: node lipsync-check.js <clip.mp4> <song.mp3> <songStartSec> [seconds=6]
 // prints the match (1.00 = same sound) and the offset; |offset| under 40 ms is under a frame.
 import { execFileSync } from 'node:child_process'
 const FF = process.env.FFMPEG || 'ffmpeg'  // PATH 里的 ffmpeg，或用环境变量 FFMPEG 指定

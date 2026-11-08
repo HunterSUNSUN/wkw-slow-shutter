@@ -66,7 +66,7 @@ bash <本Skill>/scripts/post-fx.sh sing-smear 原片.mp4 fx.mp4 690 290 200 225
 ## 5. 拼接
 照 `examples/slow-shutter/cut.json` 写剪辑表：每个镜头在歌里从哪一秒开始、用哪个文件，最后一镜到 `end` 结束。
 ```bash
-node <本Skill>/scripts/assemble.mjs cut.json 成片.mp4
+node <本Skill>/scripts/assemble.js cut.json 成片.mp4
 ```
 脚本把剪辑点换成帧号按帧截，配上原曲那一段，开头淡入、结尾淡出，CRF 12。**别按秒逐段截**：每段四舍五入到整帧，误差会累加，拼到后面口型就对不上。
 
